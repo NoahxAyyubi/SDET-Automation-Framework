@@ -2,6 +2,8 @@ package test;
 
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
+
+import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import api.client.PetClient;
 import api.utils.Config;
@@ -13,14 +15,15 @@ public class SubscriptionCreationTests {
     // create reusable API client (links test -> client layer)
     static PetClient petClient = new PetClient();
 
-       Pet pet = new Pet(
+    /*
+    Pet pet = new Pet(
                 9001,
-                "test-subscription",
-                "available"
+                "basic-plan",
+                "active"
         );
+    */
 
 
-    // runs once before all tests (sets base URL from Config class)
     @BeforeAll
     static void setup() {
         Config.setup();
@@ -30,18 +33,11 @@ public class SubscriptionCreationTests {
     public void shouldCreateSubscriptionSuccessfully() {
         System.out.println("\n=== Running: shouldCreateSubscriptionSuccessfully ===");
 
-        // MODEL usage instead of raw JSON string
-     
-        // call reusable client method instead of writing HTTP request inline
-        // FLOW:
-        // test -> passes JSON body -> PetClient -> RestAssured -> API
-        Response response = petClient.createPet(pet);
+        String body = api.utils.PayloadLoader.load("createSubscriptionValid.json");
 
-        // log response AFTER request is sent
+        Response response = petClient.createPet(body);
+
         response.then().log().all();
-
-        System.out.println("Response status code: " + response.statusCode());
-        System.out.println("Response body: " + response.getBody().asString());
 
         assertEquals(200, response.statusCode());
     }
@@ -50,36 +46,26 @@ public class SubscriptionCreationTests {
     public void shouldGetPetById() {
         System.out.println("\n=== Running: shouldGetPetById ===");
 
-        // baby step 1: make sure pet exists in system first
-        // we send pet to API so later we can try to get it back
-        petClient.createPet(pet);
+        String body = api.utils.PayloadLoader.load("createSubscriptionValid.json");
+        petClient.createPet(body);
 
-        // baby step 2: call API to get pet by id
-        // this sends GET request -> API -> returns JSON response
         Response response = petClient.getPet(9001);
 
-        // print everything API sends back (for learning/debug)
         response.then().log().all();
 
-        // baby step 3: convert JSON response into Pet object
-        // "as(Pet.class)" means: take JSON and turn into Java object
         Pet returnedPet = response.as(Pet.class);
 
-        // baby step 4: check status code is correct (API worked)
         assertEquals(200, response.statusCode());
 
-        // baby step 5: compare expected vs actual values
-        // expected = original pet we created
-        // actual = pet returned from API
-        assertEquals(pet.getName(), returnedPet.getName());
-        assertEquals(pet.getStatus(), returnedPet.getStatus());
+        assertEquals(9001, returnedPet.getId());
+        assertEquals("basic-plan", returnedPet.getName());
+        assertEquals("active", returnedPet.getStatus());
     }
 
     @Test
     public void shouldUpdatePet() {
         System.out.println("\n=== Running: shouldUpdatePet ===");
 
-        // Step 1: ensure pet exists
         // String createBody = """
         // {
         //   "id": 9001,
@@ -87,19 +73,17 @@ public class SubscriptionCreationTests {
         //   "status": "available"
         // }
         // """;
+        String body = api.utils.PayloadLoader.load("createSubscriptionValid.json");
+        petClient.createPet(body);
 
-        petClient.createPet(pet);
-
-        // Step 2: update pet
         String updateBody = """
         {
-          "id": 9001,
+          "id": 9002,
           "name": "updated-subscription",
           "status": "available"
         }
         """;
 
-        // update request routed through client layer
         Response response = petClient.updatePet(updateBody);
 
         response.then().log().all();
@@ -114,7 +98,6 @@ public class SubscriptionCreationTests {
     public void shouldDeletePet() {
         System.out.println("\n=== Running: shouldDeletePet ===");
 
-        // // Step 1: ensure pet exists
         // String createBody = """
         // {
         //   "id": 9001,
@@ -123,9 +106,10 @@ public class SubscriptionCreationTests {
         // }
         // """;
 
-        petClient.createPet(pet);
+        //petClient.createPet(pet);//
+        String body = api.utils.PayloadLoader.load("createSubscriptionValid.json");
+        petClient.createPet(body);
 
-        // delete request routed through client layer
         Response response = petClient.deletePet(9001);
 
         response.then().log().all();
@@ -137,4 +121,99 @@ public class SubscriptionCreationTests {
     }
 
 
+    @Test
+    public void shouldReturnNotFoundForInvalidId() {
+        System.out.println("\n=== Running: shouldReturnNotFoundForInvalidId ===");
+
+        int nonExistingId = 9999999;
+
+        Response response = petClient.getPet(nonExistingId);
+
+        response.then().log().all();
+
+        Pet returnedPet = response.as(Pet.class);
+        System.out.println("Returned ID: " + returnedPet.getId());
+        System.out.println("Returned Name: " + returnedPet.getName());
+        System.out.println("Returned Status: " + returnedPet.getStatus());
+
+        assertEquals(404, response.statusCode());
+    }
+
+
+    @Test
+    public void shouldFailWhenPetNameMissing() {
+        System.out.println("\n=== Running: shouldFailWhenPetNameMissing ===");
+
+        // String invalidBody = """
+        // {
+        //   "name": "test-subscription",
+        //   "status": "available"
+        // }
+        // """;
+        String invalidBody = api.utils.PayloadLoader.load("createSubscriptionMissingName.json");
+        Response response = petClient.createPet(invalidBody);
+
+        response.then().log().all();
+
+        Pet returnedPet = response.as(Pet.class);
+        System.out.println("Returned ID: " + returnedPet.getId());
+        System.out.println("Returned Name: no name provided" + returnedPet.getName());
+        System.out.println("Returned Status: " + returnedPet.getStatus());
+
+        assertEquals(400, response.statusCode());
+    }
+
+
+    @Test
+    public void shouldFailWhenInvalidStatusValue() {
+        System.out.println("\n=== Running: shouldFailWhenInvalidStatusValue ===");
+
+        // String invalidStatus = """
+        // {
+        //   "id": 9002,
+        //   "name": "bad-status-test",
+        //   "status": "not-real-status"
+        // }
+        // """;
+        String invalidStatus = api.utils.PayloadLoader.load("createSubscriptionInvalidStatus.json");
+        Response response = petClient.createPet(invalidStatus);
+
+        response.then().log().all();
+
+        Pet returnedPet = response.as(Pet.class);
+        System.out.println("Returned ID: " + returnedPet.getId());
+        System.out.println("Returned Name: " + returnedPet.getName());
+        System.out.println("Returned Status: " + returnedPet.getStatus());
+
+        assertEquals(400, response.statusCode());
+    }
+
+    @Test
+    public void shouldCreateSubscriptionUsingDataFactory() {
+        System.out.println("\n=== Running: shouldCreateSubscriptionUsingDataFactory ===");
+
+        // workbook example:
+        // DataFactory builds JSON dynamically instead of loading static payload file
+
+        String dynamicBody = api.utils.DataFactory.createSubscriptionBody(
+                9010,
+                "dynamic-plan",
+                "active"
+        );
+
+        // send request using client layer
+        Response response = petClient.createPet(dynamicBody);
+
+        // print API response
+        response.then().log().all();
+
+        // convert response JSON -> Pet model
+        Pet returnedPet = response.as(Pet.class);
+
+        // validations
+        assertEquals(200, response.statusCode());
+        assertEquals(9010, returnedPet.getId());
+        assertEquals("dynamic-plan", returnedPet.getName());
+        assertEquals("active", returnedPet.getStatus());
+    }
 }

@@ -1,18 +1,24 @@
 package api.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Pet {
 
-    private int id;
+    private long id;
     private String name;
     private String status;
 
-    public Pet(int id, String name, String status) {
+    public Pet() {
+    }
+
+    public Pet(long id, String name, String status) {
         this.id = id;
         this.name = name;
         this.status = status;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 

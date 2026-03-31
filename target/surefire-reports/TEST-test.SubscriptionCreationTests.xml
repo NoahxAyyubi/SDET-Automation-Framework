@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="test.SubscriptionCreationTests" time="1.871" tests="4" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.1" name="test.SubscriptionCreationTests" time="2.211" tests="8" errors="0" skipped="0" failures="3">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -13,7 +13,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk@17/17.0.18/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/noahayyubi/Desktop/Account-Management-Platform/target/surefire/surefirebooter-20260329204304178_3.jar /Users/noahayyubi/Desktop/Account-Management-Platform/target/surefire 2026-03-29T20-43-04_135-jvmRun1 surefire-20260329204304178_1tmp surefire_0-20260329204304178_2tmp"/>
+    <property name="sun.java.command" value="/Users/noahayyubi/Desktop/Account-Management-Platform/target/surefire/surefirebooter-20260331182603438_3.jar /Users/noahayyubi/Desktop/Account-Management-Platform/target/surefire 2026-03-31T18-26-03_397-jvmRun1 surefire-20260331182603438_1tmp surefire_0-20260331182603438_2tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/noahayyubi/Desktop/Account-Management-Platform/target/test-classes:/Users/noahayyubi/Desktop/Account-Management-Platform/target/classes:/Users/noahayyubi/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.0/junit-jupiter-api-5.11.0.jar:/Users/noahayyubi/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/noahayyubi/.m2/repository/org/junit/platform/junit-platform-commons/1.11.0/junit-platform-commons-1.11.0.jar:/Users/noahayyubi/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/noahayyubi/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.11.0/junit-jupiter-params-5.11.0.jar:/Users/noahayyubi/.m2/repository/io/rest-assured/rest-assured/5.4.0/rest-assured-5.4.0.jar:/Users/noahayyubi/.m2/repository/org/apache/groovy/groovy/4.0.16/groovy-4.0.16.jar:/Users/noahayyubi/.m2/repository/org/apache/groovy/groovy-xml/4.0.16/groovy-xml-4.0.16.jar:/Users/noahayyubi/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/Users/noahayyubi/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar:/Users/noahayyubi/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/noahayyubi/.m2/repository/commons-codec/commons-codec/1.11/commons-codec-1.11.jar:/Users/noahayyubi/.m2/repository/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar:/Users/noahayyubi/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/Users/noahayyubi/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/Users/noahayyubi/.m2/repository/io/rest-assured/json-path/5.4.0/json-path-5.4.0.jar:/Users/noahayyubi/.m2/repository/org/apache/groovy/groovy-json/4.0.16/groovy-json-4.0.16.jar:/Users/noahayyubi/.m2/repository/io/rest-assured/rest-assured-common/5.4.0/rest-assured-common-5.4.0.jar:/Users/noahayyubi/.m2/repository/io/rest-assured/xml-path/5.4.0/xml-path-5.4.0.jar:/Users/noahayyubi/.m2/repository/org/apache/commons/commons-lang3/3.11/commons-lang3-3.11.jar:/Users/noahayyubi/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.17.1/jackson-databind-2.17.1.jar:/Users/noahayyubi/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.17.1/jackson-annotations-2.17.1.jar:/Users/noahayyubi/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.17.1/jackson-core-2.17.1.jar:"/>
@@ -29,7 +29,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="/Users/noahayyubi/Desktop/Account-Management-Platform/target/surefire/surefirebooter-20260329204304178_3.jar"/>
+    <property name="surefire.real.class.path" value="/Users/noahayyubi/Desktop/Account-Management-Platform/target/surefire/surefirebooter-20260331182603438_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="17.0.18+0"/>
@@ -57,11 +57,37 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="shouldDeletePet" classname="test.SubscriptionCreationTests" time="0.983">
+  <testcase name="shouldCreateSubscriptionUsingDataFactory" classname="test.SubscriptionCreationTests" time="0.687">
+    <system-out><![CDATA[
+=== Running: shouldCreateSubscriptionUsingDataFactory ===
+HTTP/1.1 200 OK
+Date: Tue, 31 Mar 2026 22:26:04 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, DELETE, PUT
+Access-Control-Allow-Headers: Content-Type, api_key, Authorization
+Server: Jetty(9.2.9.v20150224)
+
+{
+    "id": 9010,
+    "name": "dynamic-plan",
+    "photoUrls": [
+        
+    ],
+    "tags": [
+        
+    ],
+    "status": "active"
+}
+]]></system-out>
+  </testcase>
+  <testcase name="shouldDeletePet" classname="test.SubscriptionCreationTests" time="0.253">
     <system-out><![CDATA[
 === Running: shouldDeletePet ===
 HTTP/1.1 200 OK
-Date: Mon, 30 Mar 2026 00:43:05 GMT
+Date: Tue, 31 Mar 2026 22:26:04 GMT
 Content-Type: application/json
 Transfer-Encoding: chunked
 Connection: keep-alive
@@ -79,11 +105,52 @@ Response status code: 200
 Response body: {"code":200,"type":"unknown","message":"9001"}
 ]]></system-out>
   </testcase>
-  <testcase name="shouldGetPetById" classname="test.SubscriptionCreationTests" time="0.317">
+  <testcase name="shouldFailWhenInvalidStatusValue" classname="test.SubscriptionCreationTests" time="0.113">
+    <failure message="expected: &lt;400&gt; but was: &lt;200&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <400> but was: <200>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at test.SubscriptionCreationTests.shouldFailWhenInvalidStatusValue(SubscriptionCreationTests.java:188)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></failure>
+    <system-out><![CDATA[
+=== Running: shouldFailWhenInvalidStatusValue ===
+HTTP/1.1 200 OK
+Date: Tue, 31 Mar 2026 22:26:04 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, DELETE, PUT
+Access-Control-Allow-Headers: Content-Type, api_key, Authorization
+Server: Jetty(9.2.9.v20150224)
+
+{
+    "id": 9103,
+    "name": "enterprise-plan",
+    "photoUrls": [
+        
+    ],
+    "tags": [
+        
+    ],
+    "status": "not-valid-status"
+}
+Returned ID: 9103
+Returned Name: enterprise-plan
+Returned Status: not-valid-status
+]]></system-out>
+  </testcase>
+  <testcase name="shouldGetPetById" classname="test.SubscriptionCreationTests" time="0.316">
     <system-out><![CDATA[
 === Running: shouldGetPetById ===
 HTTP/1.1 200 OK
-Date: Mon, 30 Mar 2026 00:43:05 GMT
+Date: Tue, 31 Mar 2026 22:26:05 GMT
 Content-Type: application/json
 Transfer-Encoding: chunked
 Connection: keep-alive
@@ -94,24 +161,22 @@ Server: Jetty(9.2.9.v20150224)
 
 {
     "id": 9001,
-    "name": "test-subscription",
+    "name": "basic-plan",
     "photoUrls": [
         
     ],
     "tags": [
         
     ],
-    "status": "available"
+    "status": "active"
 }
-Response status code: 200
-Response body: {"id":9001,"name":"test-subscription","photoUrls":[],"tags":[],"status":"available"}
 ]]></system-out>
   </testcase>
-  <testcase name="shouldCreateSubscriptionSuccessfully" classname="test.SubscriptionCreationTests" time="0.122">
+  <testcase name="shouldCreateSubscriptionSuccessfully" classname="test.SubscriptionCreationTests" time="0.115">
     <system-out><![CDATA[
 === Running: shouldCreateSubscriptionSuccessfully ===
 HTTP/1.1 200 OK
-Date: Mon, 30 Mar 2026 00:43:06 GMT
+Date: Tue, 31 Mar 2026 22:26:05 GMT
 Content-Type: application/json
 Transfer-Encoding: chunked
 Connection: keep-alive
@@ -122,24 +187,22 @@ Server: Jetty(9.2.9.v20150224)
 
 {
     "id": 9001,
-    "name": "test-subscription",
+    "name": "basic-plan",
     "photoUrls": [
         
     ],
     "tags": [
         
     ],
-    "status": "available"
+    "status": "active"
 }
-Response status code: 200
-Response body: {"id":9001,"name":"test-subscription","photoUrls":[],"tags":[],"status":"available"}
 ]]></system-out>
   </testcase>
-  <testcase name="shouldUpdatePet" classname="test.SubscriptionCreationTests" time="0.297">
+  <testcase name="shouldUpdatePet" classname="test.SubscriptionCreationTests" time="0.331">
     <system-out><![CDATA[
 === Running: shouldUpdatePet ===
 HTTP/1.1 200 OK
-Date: Mon, 30 Mar 2026 00:43:06 GMT
+Date: Tue, 31 Mar 2026 22:26:05 GMT
 Content-Type: application/json
 Transfer-Encoding: chunked
 Connection: keep-alive
@@ -149,7 +212,7 @@ Access-Control-Allow-Headers: Content-Type, api_key, Authorization
 Server: Jetty(9.2.9.v20150224)
 
 {
-    "id": 9001,
+    "id": 9002,
     "name": "updated-subscription",
     "photoUrls": [
         
@@ -160,7 +223,95 @@ Server: Jetty(9.2.9.v20150224)
     "status": "available"
 }
 Response status code: 200
-Response body: {"id":9001,"name":"updated-subscription","photoUrls":[],"tags":[],"status":"available"}
+Response body: {"id":9002,"name":"updated-subscription","photoUrls":[],"tags":[],"status":"available"}
+]]></system-out>
+  </testcase>
+  <testcase name="shouldFailWhenPetNameMissing" classname="test.SubscriptionCreationTests" time="0.126">
+    <failure message="expected: &lt;400&gt; but was: &lt;200&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <400> but was: <200>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at test.SubscriptionCreationTests.shouldFailWhenPetNameMissing(SubscriptionCreationTests.java:163)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></failure>
+    <system-out><![CDATA[
+=== Running: shouldFailWhenPetNameMissing ===
+HTTP/1.1 200 OK
+Date: Tue, 31 Mar 2026 22:26:05 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, DELETE, PUT
+Access-Control-Allow-Headers: Content-Type, api_key, Authorization
+Server: Jetty(9.2.9.v20150224)
+
+{
+    "id": 9102,
+    "photoUrls": [
+        
+    ],
+    "tags": [
+        
+    ],
+    "status": "active"
+}
+Returned ID: 9102
+Returned Name: no name providednull
+Returned Status: active
+]]></system-out>
+  </testcase>
+  <testcase name="shouldReturnNotFoundForInvalidId" classname="test.SubscriptionCreationTests" time="0.11">
+    <failure message="expected: &lt;404&gt; but was: &lt;200&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <404> but was: <200>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at test.SubscriptionCreationTests.shouldReturnNotFoundForInvalidId(SubscriptionCreationTests.java:139)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+]]></failure>
+    <system-out><![CDATA[
+=== Running: shouldReturnNotFoundForInvalidId ===
+HTTP/1.1 200 OK
+Date: Tue, 31 Mar 2026 22:26:05 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, POST, DELETE, PUT
+Access-Control-Allow-Headers: Content-Type, api_key, Authorization
+Server: Jetty(9.2.9.v20150224)
+
+{
+    "id": 9999999,
+    "category": {
+        "id": 3,
+        "name": "Baks"
+    },
+    "name": "doggie",
+    "photoUrls": [
+        
+    ],
+    "tags": [
+        {
+            "id": 3,
+            "name": "Baks"
+        }
+    ],
+    "status": "available"
+}
+Returned ID: 9999999
+Returned Name: doggie
+Returned Status: available
 ]]></system-out>
   </testcase>
 </testsuite>
