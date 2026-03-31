@@ -13,13 +13,42 @@ public class PetClient {
         return given()
 
                 .header(
-                    "Content-Type",
-                    "application/json"
+                        "Content-Type",
+                        "application/json"
+
                 )
 
                 .body(pet)
 
-        .when()
+                .when()
+
+                .post("/pet");
+
+    }
+    
+    // ================= WORKBOOK STEP =================
+    // This overload allows tests to send raw JSON from PayloadLoader
+    // Example usage in test:
+    // String body = PayloadLoader.load("createSubscriptionValid.json");
+    // petClient.createPet(body);
+    //
+    // Why this exists:
+    // createPet(Pet pet) expects a Java object
+    // PayloadLoader returns a JSON String
+    // We keep both methods so old tests do NOT break
+
+    public Response createPet(String rawJsonBody) {
+
+        return given()
+
+                .header(
+                        "Content-Type",
+                        "application/json"
+                )
+
+                .body(rawJsonBody)
+
+                .when()
 
                 .post("/pet");
 

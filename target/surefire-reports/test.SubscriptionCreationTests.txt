@@ -1,4 +1,43 @@
 -------------------------------------------------------------------------------
 Test set: test.SubscriptionCreationTests
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.871 s -- in test.SubscriptionCreationTests
+Tests run: 8, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 2.211 s <<< FAILURE! -- in test.SubscriptionCreationTests
+test.SubscriptionCreationTests.shouldFailWhenInvalidStatusValue -- Time elapsed: 0.113 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <400> but was: <200>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at test.SubscriptionCreationTests.shouldFailWhenInvalidStatusValue(SubscriptionCreationTests.java:188)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+test.SubscriptionCreationTests.shouldFailWhenPetNameMissing -- Time elapsed: 0.126 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <400> but was: <200>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at test.SubscriptionCreationTests.shouldFailWhenPetNameMissing(SubscriptionCreationTests.java:163)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+test.SubscriptionCreationTests.shouldReturnNotFoundForInvalidId -- Time elapsed: 0.110 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <404> but was: <200>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
+	at test.SubscriptionCreationTests.shouldReturnNotFoundForInvalidId(SubscriptionCreationTests.java:139)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
