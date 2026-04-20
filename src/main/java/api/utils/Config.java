@@ -64,7 +64,7 @@ public class Config {
         }
     }
 /*
-================ INDUSTRY VERSION (COMMENTED FOR LEARNING) ================
+================ INDUSTRY VERSION Calling properties file (COMMENTED FOR LEARNING) ================
 This version loads environment-specific config files automatically.
 It runs ONCE when Config class is first used anywhere in the tests.
 
@@ -88,32 +88,24 @@ Nothing runs automatically until Config class is referenced
 import java.io.InputStream;
 import java.util.Properties;
 
+ Properties is a built-in Java class — you do NOT create it yourself.
 private static Properties properties = new Properties();
 
 static {
 try {
-    String env = System.getProperty("env", "dev");
+String env = System.getProperty("env", "qa"); // default to "qa" if env not provided
 
-    String fileName = "config-" + env + ".properties";
+String fileName = "config-" + env + ".properties";
 
-    InputStream input =
-            Config.class.getClassLoader().getResourceAsStream(fileName);
+InputStream input =
+        Config.class.getClassLoader().getResourceAsStream(fileName);
 
-    if (input == null) {
-        throw new RuntimeException("Could not find " + fileName);
-    }
-
-    properties.load(input);
-    
-
-    // GLOBAL base URL setup
-    RestAssured.baseURI =
-        properties.getProperty("petstore.url");
-
-} catch (Exception e) {
-    throw new RuntimeException("Failed loading config file", e);
+if (input == null) {
+    throw new RuntimeException("Could not find " + fileName);
 }
-}
+
+properties.load(input);
+
 
 public static String getPetstoreBaseUrl_fromFile() {
 return properties.getProperty("petstore.url");
