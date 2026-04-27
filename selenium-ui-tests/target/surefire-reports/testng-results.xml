@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-04-26T21:12:46 EDT" name="Surefire suite" finished-at="2026-04-26T21:12:51 EDT" duration-ms="5621">
+    <groups>
+    </groups>
+    <test started-at="2026-04-26T21:12:46 EDT" name="Surefire test" finished-at="2026-04-26T21:12:51 EDT" duration-ms="5621">
+      <class name="test.SanityTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:test.SanityTest@c540f5a]" started-at="2026-04-26T21:12:46 EDT" name="setup" finished-at="2026-04-26T21:12:48 EDT" duration-ms="2206" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="openHomePage()[pri:0, instance:test.SanityTest@c540f5a]" started-at="2026-04-26T21:12:48 EDT" name="openHomePage" finished-at="2026-04-26T21:12:51 EDT" duration-ms="3303" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openHomePage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.SanityTest@c540f5a]" started-at="2026-04-26T21:12:51 EDT" name="tearDown" finished-at="2026-04-26T21:12:51 EDT" duration-ms="97" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- test.SanityTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
