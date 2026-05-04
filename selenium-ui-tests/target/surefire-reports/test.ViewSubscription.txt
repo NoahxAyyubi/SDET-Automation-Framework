@@ -1,87 +1,9 @@
-<html>
-<head>
-<title>TestNG:  Surefire test</title>
-<link href="../testng.css" rel="stylesheet" type="text/css" />
-<link href="../my-testng.css" rel="stylesheet" type="text/css" />
-
-<style type="text/css">
-.log { display: none;} 
-.stack-trace { display: none;} 
-</style>
-<script type="text/javascript">
-<!--
-function flip(e) {
-  current = e.style.display;
-  if (current == 'block') {
-    e.style.display = 'none';
-    return 0;
-  }
-  else {
-    e.style.display = 'block';
-    return 1;
-  }
-}
-
-function toggleBox(szDivId, elem, msg1, msg2)
-{
-  var res = -1;  if (document.getElementById) {
-    res = flip(document.getElementById(szDivId));
-  }
-  else if (document.all) {
-    // this is the way old msie versions work
-    res = flip(document.all[szDivId]);
-  }
-  if(elem) {
-    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
-  }
-
-}
-
-function toggleAllBoxes() {
-  if (document.getElementsByTagName) {
-    d = document.getElementsByTagName('div');
-    for (i = 0; i < d.length; i++) {
-      if (d[i].className == 'log') {
-        flip(d[i]);
-      }
-    }
-  }
-}
-
-// -->
-</script>
-
-</head>
-<body>
-<h2 align='center'>Surefire test</h2><table border='1' align="center">
-<tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
-</tr><tr>
-<td>Started on:</td><td>Sun May 03 20:32:40 EDT 2026</td>
-</tr>
-<tr><td>Total time:</td><td>5 seconds (5108 ms)</td>
-</tr><tr>
-<td>Included groups:</td><td></td>
-</tr><tr>
-<td>Excluded groups:</td><td></td>
-</tr>
-</table><p/>
-<small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td><b>Attribute(s)</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='test.ViewSubscription.testGetRowDataByName()'><b>testGetRowDataByName</b><br>Test class: test.ViewSubscription</td>
-<td><div><pre>java.lang.AssertionError: Row data should not be null expected object to not be null
-	at test.ViewSubscription.testGetRowDataByName(ViewSubscription.java:95)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 34 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1142735456", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1142735456'><pre>java.lang.AssertionError: Row data should not be null expected object to not be null
+-------------------------------------------------------------------------------
+Test set: test.ViewSubscription
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 5.314 s <<< FAILURE! - in test.ViewSubscription
+test.ViewSubscription.testGetRowDataByName  Time elapsed: 1.493 s  <<< FAILURE!
+java.lang.AssertionError: Row data should not be null expected object to not be null
 	at org.testng.Assert.fail(Assert.java:111)
 	at org.testng.Assert.assertNotNull(Assert.java:1484)
 	at test.ViewSubscription.testGetRowDataByName(ViewSubscription.java:95)
@@ -118,9 +40,4 @@ function toggleAllBoxes() {
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
-</pre></div></td>
-<td>1</td>
-<td>test.ViewSubscription@61009542</td></tr>
-</table><p>
-</body>
-</html>
+

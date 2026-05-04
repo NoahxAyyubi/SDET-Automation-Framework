@@ -3,13 +3,13 @@
 <suite name="Failed suite [Surefire suite]" verbose="0">
   <test thread-count="5" name="Surefire test(failed)" verbose="0">
     <classes>
-      <class name="test.SanityTest">
+      <class name="test.ViewSubscription">
         <methods>
           <include name="setup"/>
           <include name="tearDown"/>
-          <include name="openHomePage"/>
+          <include name="testGetRowDataByName"/>
         </methods>
-      </class> <!-- test.SanityTest -->
+      </class> <!-- test.ViewSubscription -->
     </classes>
   </test> <!-- Surefire test(failed) -->
 </suite> <!-- Failed suite [Surefire suite] -->
