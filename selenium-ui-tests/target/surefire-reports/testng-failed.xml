@@ -3,13 +3,13 @@
 <suite name="Failed suite [Surefire suite]" verbose="0">
   <test thread-count="5" name="Surefire test(failed)" verbose="0">
     <classes>
-      <class name="test.ViewSubscription">
+      <class name="test.SubscriptionUserFlow">
         <methods>
           <include name="setup"/>
           <include name="tearDown"/>
-          <include name="testGetRowDataByName"/>
+          <include name="testSubscriptionUserFlow"/>
         </methods>
-      </class> <!-- test.ViewSubscription -->
+      </class> <!-- test.SubscriptionUserFlow -->
     </classes>
   </test> <!-- Surefire test(failed) -->
 </suite> <!-- Failed suite [Surefire suite] -->
