@@ -1,25 +1,142 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="4" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-05-04T22:47:57 EDT" name="Surefire suite" finished-at="2026-05-04T22:48:03 EDT" duration-ms="5440">
+  <suite started-at="2026-05-13T21:48:53 EDT" name="UI Suite" finished-at="2026-05-13T21:49:08 EDT" duration-ms="15051">
     <groups>
     </groups>
-    <test started-at="2026-05-04T22:47:57 EDT" name="Surefire test" finished-at="2026-05-04T22:48:03 EDT" duration-ms="5440">
-      <class name="test.SubscriptionUserFlow">
-        <test-method is-config="true" signature="setup()[pri:0, instance:test.SubscriptionUserFlow@c540f5a]" started-at="2026-05-04T22:47:57 EDT" name="setup" finished-at="2026-05-04T22:48:00 EDT" duration-ms="2844" status="PASS">
+    <test started-at="2026-05-13T21:48:53 EDT" name="UI Tests" finished-at="2026-05-13T21:49:08 EDT" duration-ms="15051">
+      <class name="test.ViewSubscription">
+        <test-method is-config="true" signature="setup(org.testng.ITestContext)[pri:0, instance:test.ViewSubscription@5a56cdac]" started-at="2026-05-13T21:48:53 EDT" name="setup" finished-at="2026-05-13T21:48:58 EDT" duration-ms="5469" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@533bda92]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="testSubscriptionUserFlow()[pri:0, instance:test.SubscriptionUserFlow@c540f5a]" started-at="2026-05-04T22:48:00 EDT" name="testSubscriptionUserFlow" finished-at="2026-05-04T22:48:03 EDT" duration-ms="2475" status="PASS">
+        <test-method signature="testGetRowDataByName()[pri:0, instance:test.ViewSubscription@5a56cdac]" started-at="2026-05-13T21:48:59 EDT" name="testGetRowDataByName" finished-at="2026-05-13T21:49:00 EDT" duration-ms="1160" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Row data should not be null expected object to not be null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Row data should not be null expected object to not be null
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.assertNotNull(Assert.java:1484)
+at test.ViewSubscription.testGetRowDataByName(ViewSubscription.java:98)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:840)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetRowDataByName -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.ViewSubscription@5a56cdac]" started-at="2026-05-13T21:49:00 EDT" name="tearDown" finished-at="2026-05-13T21:49:00 EDT" duration-ms="90" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup(org.testng.ITestContext)[pri:0, instance:test.ViewSubscription@5a56cdac]" started-at="2026-05-13T21:49:00 EDT" name="setup" finished-at="2026-05-13T21:49:01 EDT" duration-ms="1494" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@533bda92]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testIframeActions()[pri:0, instance:test.ViewSubscription@5a56cdac]" started-at="2026-05-13T21:49:01 EDT" name="testIframeActions" finished-at="2026-05-13T21:49:03 EDT" duration-ms="1071" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testIframeActions -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.ViewSubscription@5a56cdac]" started-at="2026-05-13T21:49:03 EDT" name="tearDown" finished-at="2026-05-13T21:49:03 EDT" duration-ms="107" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- test.ViewSubscription -->
+      <class name="test.SanityTest">
+        <test-method is-config="true" signature="setup(org.testng.ITestContext)[pri:0, instance:test.SanityTest@2fb3536e]" started-at="2026-05-13T21:48:53 EDT" name="setup" finished-at="2026-05-13T21:48:58 EDT" duration-ms="5469" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@533bda92]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="openHomePage()[pri:0, instance:test.SanityTest@2fb3536e]" started-at="2026-05-13T21:48:59 EDT" name="openHomePage" finished-at="2026-05-13T21:49:02 EDT" duration-ms="3159" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openHomePage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.SanityTest@2fb3536e]" started-at="2026-05-13T21:49:02 EDT" name="tearDown" finished-at="2026-05-13T21:49:02 EDT" duration-ms="88" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup(org.testng.ITestContext)[pri:0, instance:test.SanityTest@2fb3536e]" started-at="2026-05-13T21:49:02 EDT" name="setup" finished-at="2026-05-13T21:49:03 EDT" duration-ms="1220" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@533bda92]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testPaginationNavigation()[pri:0, instance:test.SanityTest@2fb3536e]" started-at="2026-05-13T21:49:03 EDT" name="testPaginationNavigation" finished-at="2026-05-13T21:49:08 EDT" duration-ms="4938" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPaginationNavigation -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.SanityTest@2fb3536e]" started-at="2026-05-13T21:49:08 EDT" name="tearDown" finished-at="2026-05-13T21:49:08 EDT" duration-ms="89" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- test.SanityTest -->
+      <class name="test.SubscriptionUserFlow">
+        <test-method is-config="true" signature="setup(org.testng.ITestContext)[pri:0, instance:test.SubscriptionUserFlow@7c711375]" started-at="2026-05-13T21:48:53 EDT" name="setup" finished-at="2026-05-13T21:48:58 EDT" duration-ms="5468" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@533bda92]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testSubscriptionUserFlow()[pri:0, instance:test.SubscriptionUserFlow@7c711375]" started-at="2026-05-13T21:48:59 EDT" name="testSubscriptionUserFlow" finished-at="2026-05-13T21:49:01 EDT" duration-ms="2317" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSubscriptionUserFlow -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.SubscriptionUserFlow@c540f5a]" started-at="2026-05-04T22:48:03 EDT" name="tearDown" finished-at="2026-05-04T22:48:03 EDT" duration-ms="105" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:test.SubscriptionUserFlow@7c711375]" started-at="2026-05-13T21:49:01 EDT" name="tearDown" finished-at="2026-05-13T21:49:01 EDT" duration-ms="202" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- test.SubscriptionUserFlow -->
-    </test> <!-- Surefire test -->
-  </suite> <!-- Surefire suite -->
+    </test> <!-- UI Tests -->
+  </suite> <!-- UI Suite -->
 </testng-results>

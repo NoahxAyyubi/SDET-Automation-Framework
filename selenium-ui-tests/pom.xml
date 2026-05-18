@@ -41,6 +41,13 @@
       <version>7.9.0</version>
     </dependency>
 
+    <!-- Allure Reporting for TestNG -->
+    <dependency>
+      <groupId>io.qameta.allure</groupId>
+      <artifactId>allure-testng</artifactId>
+      <version>2.24.0</version>
+    </dependency>
+
   </dependencies>
 
   <build>
@@ -68,8 +75,26 @@
               <include>**/*Test.java</include>
             </includes>
             <useSystemClassLoader>false</useSystemClassLoader>
+            <suiteXmlFiles>
+              <suiteXmlFile>${surefire.suiteXmlFiles}</suiteXmlFile>
+            </suiteXmlFiles>
+
+            <!-- Force Allure results output directory -->
+            <systemPropertyVariables>
+              <allure.results.directory>
+                ${project.build.directory}/allure-results
+              </allure.results.directory>
+            </systemPropertyVariables>
           </configuration>
         </plugin>
+
+        <!-- Allure Maven Plugin -->
+        <plugin>
+          <groupId>io.qameta.allure</groupId>
+          <artifactId>allure-maven</artifactId>
+          <version>2.12.0</version>
+        </plugin>
+
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.0.2</version>
@@ -94,3 +119,4 @@
       </plugins>
   </build>
 </project>
+
